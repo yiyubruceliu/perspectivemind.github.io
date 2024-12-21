@@ -756,7 +756,7 @@ footer .cta-button:hover {
     vertical-align: middle;
 }
 
-.footer-contact:hover i {
+.footer-contact:hover > i {
     color: #92D050;
 }
 
@@ -770,4 +770,20 @@ footer .col-lg-6 {
 
 footer .footer-cta {
     margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.social-link {
+    color: #00B0F0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover i {
+    color: #92D050;
 }
