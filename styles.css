@@ -1,0 +1,773 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url('img/leone-venter-VieM9BdZKFo-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    text-align: center;
+    padding: 4rem 2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3rem;
+    padding-bottom: 20px;
+}
+
+header h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: #00B0F0;
+    transform: translateX(-50%);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+header .logos p {
+    color: #fff;
+}
+
+.cta-button {
+    background-color: #212121;
+    color: #f4f4f4;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section:nth-child(even) {
+    background-color: #fff;
+}
+
+.logos img {
+    
+    margin: 0 1rem;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    background-color: white;
+    padding: 10px;
+}
+
+.logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    background: #333;
+    color: #f4f4f4;
+    padding: 2rem;
+
+}
+
+footer a {
+    color: #007aff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+    #mainNav .navbar-brand .logo {
+        height: 30px;
+    }
+}
+
+.navbar-brand {
+    margin-left: 2rem;
+}
+
+/* Optional: Add right margin to the navbar-nav to balance the spacing */
+.navbar-nav {
+    margin-right: 2rem;
+}
+
+.navbar-nav .nav-link.active {
+    color: #212121;
+    font-weight: bold;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add some padding to the top of sections to account for fixed navbar */
+section {
+    padding-top: 70px;
+    margin-top: -70px;
+}
+
+/* Video styling */
+#solution video {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Add a container for better filter application */
+.video-container {
+    position: relative;
+    filter: contrast(1.3);
+}
+
+/* Adjust section height for solution to accommodate video */
+#solution.section {
+    background-color: #f4f4f4;
+    height: auto;
+    min-height: 80vh;
+    padding: 6rem 2rem;
+}
+
+/* Make list items more readable */
+#solution ul {
+    list-style-position: inside;
+    margin: 2rem 0;
+}
+
+#solution li {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+    #solution video {
+        max-height: 300px;
+        margin: 2rem 0;
+    }
+}
+
+#about {
+    background-color: #f4f4f4;
+}
+
+#social-proof {
+    background-color: #f4f4f4;
+}
+
+.image-credit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.image-credit a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.image-credit a:hover {
+    opacity: 1;
+}
+
+#solution .container {
+    text-align: left;
+}
+
+#solution h2 {
+    text-align: left;
+}
+
+#solution p {
+    text-align: left;
+}
+
+#solution ul {
+    list-style-position: outside;
+    padding-left: 20px;
+    text-align: left;
+}
+
+#solution .col-lg-6 {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 991px) {
+    #solution .col-lg-6 {
+        height: auto;
+        margin-top: 2rem;
+    }
+}
+
+/* Add some spacing between elements */
+#solution p {
+    margin-bottom: 2rem;
+}
+
+#solution .cta-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+#problem .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+#problem img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 400px; /* Adjust this value as needed */
+}
+
+/* Adjust container height for better mobile display */
+@media (max-width: 991px) {
+    #problem .row {
+        flex-direction: column;
+    }
+    
+    #problem img {
+        max-height: 300px;
+        margin-bottom: 2rem;
+    }
+}
+
+#problem p {
+    text-align: left;
+}
+
+#problem h2 {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+#urgency .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+#urgency img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 400px;
+}
+
+#urgency p {
+    text-align: left;
+}
+
+#urgency h2 {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 991px) {
+    #urgency .row {
+        flex-direction: column;
+    }
+    
+    #urgency img {
+        max-height: 300px;
+        margin-bottom: 2rem;
+    }
+}
+
+#about .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+#about img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 400px;
+}
+
+#about p {
+    text-align: left;
+}
+
+#about h2 {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 991px) {
+    #about .row {
+        flex-direction: column;
+    }
+    
+    #about img {
+        max-height: 300px;
+        margin-bottom: 2rem;
+    }
+}
+
+#services .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+#services img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 400px;
+}
+
+#services p {
+    text-align: left;
+}
+
+#services ul {
+    text-align: left;
+    list-style-position: outside;
+    padding-left: 20px;
+    margin: 2rem 0;
+}
+
+#services li {
+    margin-bottom: 1rem;
+}
+
+#services h2 {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 991px) {
+    #services .row {
+        flex-direction: column;
+    }
+    
+    #services img {
+        max-height: 300px;
+        margin-bottom: 2rem;
+    }
+}
+
+#social-proof .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 4rem 0;
+}
+
+#social-proof .logos img {
+    width: 200px;
+    height: 200px;
+    margin: 0 1rem;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background-color: white;
+    padding: 35px;
+    border: 2px solid #212121;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+}
+
+#social-proof .logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 768px) {
+    #social-proof .logos img {
+        width: 180px;
+        height: 180px;
+        padding: 30px;
+    }
+}
+
+/* For mobile screens, we might want to reduce the margin */
+@media (max-width: 768px) {
+    #social-proof .logos {
+        margin: 2rem 0;
+    }
+}
+
+/* Header logos */
+header .logos img {
+    max-height: 80px;
+    margin: 0 1rem;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    background-color: white;
+    padding: 10px;
+}
+
+header .logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Social proof logos */
+#social-proof .logos img {
+    width: 200px;
+    height: 200px;
+    margin: 0 1rem;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background-color: white;
+    padding: 35px;
+    border: 2px solid #212121;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background-color: #fff;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: scroll 1.5s infinite;
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+    margin-top: 5px;
+    animation: arrow-bounce 1.5s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        top: 8px;
+    }
+    100% {
+        opacity: 0;
+        top: 30px;
+    }
+}
+
+@keyframes arrow-bounce {
+    0%, 100% {
+        transform: rotate(45deg) translate(0, 0);
+    }
+    50% {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+}
+
+h1, h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3rem;
+    padding-bottom: 20px;
+}
+
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: #00B0F0;
+    transform: translateX(-50%);
+}
+
+.text-center h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.highlight-text {
+    color: #92D050;
+    font-weight: bold;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Container adjustments */
+    .container {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Row adjustments */
+    .row {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Column adjustments */
+    [class*="col-"] {
+        padding: 0 15px;  /* Add padding to columns instead of container */
+        margin-bottom: 2rem;
+    }
+
+    /* Section adjustments */
+    .section {
+        padding: 4rem 0;  /* Remove horizontal padding from sections */
+    }
+
+    /* Section specific adjustments */
+    #problem.section,
+    #solution.section,
+    #urgency.section,
+    #about.section,
+    #services.section {
+        padding: 4rem 0;
+    }
+
+    /* General section adjustments */
+    .section {
+        height: auto;
+        min-height: auto;
+        padding: 4rem 1rem;
+        margin: 0;
+        overflow: hidden;  /* Prevent content overflow */
+    }
+
+    /* Image adjustments */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Title spacing */
+    h2 {
+        margin-bottom: 2rem;
+        width: auto;  /* Allow title to fit content */
+        max-width: 100%;  /* Prevent overflow */
+    }
+
+    /* Content spacing */
+    p, ul {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Remove fixed heights */
+    #solution .col-lg-6,
+    #about .col-lg-6,
+    #services .col-lg-6 {
+        height: auto;
+    }
+
+    /* Text justification for mobile */
+    p, ul li {
+        text-align: justify ;
+        hyphens: auto;
+    }
+
+    /* Keep headings centered */
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+    }
+
+    /* Keep specific elements left-aligned if needed */
+    .text-start {
+        text-align: left !important;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 576px) {
+    .section {
+        padding: 3rem 0.5rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+}
+
+.button-text-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .button-text-desktop {
+        display: none;
+    }
+    .button-text-mobile {
+        display: inline;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide header logos on mobile */
+    header .logos {
+        display: none;
+    }
+}
+
+/* Fade animations */
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: .4s;
+}
+
+.fade-in-text {
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Footer styling */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-cta {
+    margin-bottom: 1rem;
+}
+
+.footer-contact {
+    margin-bottom: 1rem;
+}
+
+.footer-contact a {
+    color: #00B0F0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #92D050;
+}
+
+footer .cta-button {
+    background-color: #92D050;
+    transition: background-color 0.3s ease;
+}
+
+footer .cta-button:hover {
+    background-color: #7ab042;
+}
+
+.footer-contact i {
+    color: #00B0F0;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.footer-contact:hover i {
+    color: #92D050;
+}
+
+footer .row {
+    min-height: 200px;  /* Or whatever height matches your logo */
+}
+
+footer .col-lg-6 {
+    padding: 20px 0;
+}
+
+footer .footer-cta {
+    margin-bottom: 1.5rem;
+}
