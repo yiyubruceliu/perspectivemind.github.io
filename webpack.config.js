@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -13,7 +14,8 @@ module.exports = {
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true
+        clean: true,
+        assetModuleFilename: 'assets/[name][ext]'
     },
     module: {
         rules: [
@@ -25,7 +27,14 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[name][ext]'
+                    filename: 'img/[name][ext]'
+                }
+            },
+            {
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'videos/[name][ext]'
                 }
             }
         ]
@@ -40,7 +49,19 @@ module.exports = {
                 removeComments: true,
                 collapseWhitespace: true
             }
-        })
+        }),
+        new CopyPlugin({
+            patterns: [
+                { 
+                    from: "src/img", 
+                    to: "img"
+                },
+                { 
+                    from: "src/videos", 
+                    to: "videos"
+                }
+            ],
+        }),
     ],
     optimization: {
         minimizer: [
