@@ -163,6 +163,38 @@ section {
     margin-top: -70px;
 }
 
+#positiveNegative {
+    background-color: #f4f4f4;
+}
+
+#positiveNegative h3 {
+    color: #212121;    
+    font-weight: bold;
+}
+
+#positiveNegative i {
+    color: #00B0F0;
+}
+
+#positiveNegative p {
+    text-align: left;
+}
+
+#positiveNegative h3::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 991px) {
+    #positiveNegative .row {
+        gap: 3rem;
+    }
+}
+
 /* Video styling */
 #solution video {
     max-height: 400px;
@@ -817,4 +849,77 @@ footer .footer-cta {
 /* Active link icon */
 .navbar-nav .nav-link.active i {
     color: #7ab042;
+}
+
+/* Statistics Section Styling */
+#statistics {
+    background-color: #333;
+    color: white;
+}
+
+.stat-box {
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+}
+
+.stat-box i {
+    color: #00B0F0;
+    font-size: 8rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #f4f4f4;
+}
+
+.stat-description {
+    color: #f4f4f4;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .stat-box {
+        margin-bottom: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+.icon-circle i {
+    color: #00B0F0;
+}
+
+.icon-circle {
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #00B0F0;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-link {
+    color: #92D050; 
+    text-decoration: none;
+    border-bottom: 1px solid #92D050;
+    padding-bottom: 2px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.stat-link:hover {
+    opacity: 0.8;
+    color: #92D050;
 }
