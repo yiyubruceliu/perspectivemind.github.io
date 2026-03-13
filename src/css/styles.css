@@ -1,3 +1,13 @@
+:root {
+    --primary: #035668;
+    --primary-rgb: 3, 86, 104;
+    --secondary: #98D5C6;
+    --secondary-rgb: 152, 213, 198;
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px rgba(3, 86, 104, 0.12);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +20,13 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
+    color: #1a3d47;
+    background: linear-gradient(160deg, rgba(152, 213, 198, 0.15) 0%, rgba(255, 255, 255, 1) 25%, rgba(152, 213, 198, 0.08) 50%, rgba(255, 255, 255, 1) 75%, rgba(3, 86, 104, 0.06) 100%);
+    background-attachment: fixed;
 }
 
 header {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    background: linear-gradient(135deg, rgba(3, 86, 104, 0.85) 0%, rgba(3, 86, 104, 0.6) 50%, rgba(152, 213, 198, 0.4) 100%),
                 url('../img/leone-venter-VieM9BdZKFo-unsplash.jpg');
     background-size: cover;
     background-position: center;
@@ -38,7 +50,7 @@ header::before {
     width: 100%;
     height: 100%;
     background: inherit;
-    filter: grayscale(100%);
+    filter: grayscale(40%);
     z-index: -1;
 }
 
@@ -46,7 +58,7 @@ header h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 20px rgba(3, 86, 104, 0.4);
     position: relative;
     display: inline-block;
     margin-bottom: 3rem;
@@ -60,30 +72,40 @@ header h1::after {
     bottom: 0;
     width: 80px;
     height: 3px;
-    background-color: #00B0F0;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
     transform: translateX(-50%);
+    border-radius: 2px;
 }
 
 header p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 10px rgba(3, 86, 104, 0.3);
 }
 
 header .logos p {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .cta-button {
-    background-color: #212121;
-    color: #f4f4f4;
+    background: linear-gradient(135deg, var(--primary) 0%, #044a5a 100%);
+    color: #fff;
     padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
     text-decoration: none;
     font-size: 1rem;
     cursor: pointer;
+    box-shadow: 0 4px 20px rgba(3, 86, 104, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(3, 86, 104, 0.45);
+    border-color: var(--secondary);
 }
 
 .section {
@@ -97,39 +119,49 @@ header .logos p {
 }
 
 .section:nth-child(even) {
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(152, 213, 198, 0.3);
+    border-bottom: 1px solid rgba(152, 213, 198, 0.3);
 }
 
 .logos img {
-    
     margin: 0 1rem;
     filter: grayscale(100%);
     opacity: 0.8;
     transition: all 0.3s ease;
-    border-radius: 2px;
-    background-color: white;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.7);
     padding: 10px;
+    border: 1px solid rgba(152, 213, 198, 0.4);
 }
 
 .logos img:hover {
     filter: grayscale(0%);
     opacity: 1;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--glass-shadow);
 }
 
 footer {
     text-align: center;
-    background: #333;
-    color: #f4f4f4;
+    background: linear-gradient(180deg, rgba(3, 86, 104, 0.95) 0%, var(--primary) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: rgba(255, 255, 255, 0.95);
     padding: 2rem;
-
+    border-top: 1px solid rgba(152, 213, 198, 0.3);
 }
 
 footer a {
-    color: #007aff;
+    color: var(--secondary);
     text-decoration: none;
     margin: 0 0.5rem;
+}
+
+footer a:hover {
+    color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -138,8 +170,31 @@ footer a {
     }
 }
 
+/* Liquid glass navbar */
+#mainNav.navbar {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(152, 213, 198, 0.4);
+    box-shadow: 0 4px 24px rgba(3, 86, 104, 0.08);
+}
+
+#mainNav .nav-link {
+    color: var(--primary) !important;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#mainNav .nav-link:hover {
+    background: rgba(152, 213, 198, 0.35);
+    color: var(--primary) !important;
+}
+
 .navbar-brand {
     margin-left: 2rem;
+    color: var(--primary) !important;
+    font-weight: 600;
 }
 
 /* Optional: Add right margin to the navbar-nav to balance the spacing */
@@ -148,8 +203,9 @@ footer a {
 }
 
 .navbar-nav .nav-link.active {
-    color: #212121;
+    color: var(--primary) !important;
     font-weight: bold;
+    background: rgba(152, 213, 198, 0.25);
 }
 
 /* Smooth scrolling for the whole page */
@@ -157,23 +213,29 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Add some padding to the top of sections to account for fixed navbar */
+/* Section spacing: use scroll-margin for fixed navbar (no overlap) */
 section {
-    padding-top: 70px;
-    margin-top: -70px;
+    padding-top: 70px;           /* clear fixed navbar */
+    padding-bottom: 5rem;        /* space before next section */
+    margin-bottom: 2rem;        /* extra gap between sections */
+    scroll-margin-top: 70px;    /* anchor scroll offset for navbar */
+    margin-top: 70px !important;
 }
 
 #positiveNegative {
-    background-color: #f4f4f4;
+    background: rgba(152, 213, 198, 0.12);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(152, 213, 198, 0.25);
+    border-bottom: 1px solid rgba(152, 213, 198, 0.25);
 }
 
 #positiveNegative h3 {
-    color: #212121;    
+    color: var(--primary);
     font-weight: bold;
 }
 
 #positiveNegative i {
-    color: #00B0F0;
+    color: var(--primary);
 }
 
 #positiveNegative p {
@@ -195,10 +257,13 @@ section {
     }
 }
 
-/* Video styling */
+/* Video styling - glass frame */
 #solution video {
     max-height: 400px;
     object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(152, 213, 198, 0.4);
+    box-shadow: 0 8px 32px rgba(3, 86, 104, 0.15);
 }
 
 /* Add a container for better filter application */
@@ -209,7 +274,8 @@ section {
 
 /* Adjust section height for solution to accommodate video */
 #solution.section {
-    background-color: #f4f4f4;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
     height: auto;
     min-height: 80vh;
     padding: 6rem 2rem;
@@ -233,11 +299,12 @@ section {
 }
 
 #about {
-    background-color: #f4f4f4;
+    background: rgba(152, 213, 198, 0.1);
+    backdrop-filter: blur(8px);
 }
 
 #social-proof {
-    background-color: #f4f4f4;
+    background: rgba(152, 213, 198, 0.1);
     display: none;
 }
 
@@ -466,10 +533,10 @@ section {
     opacity: 0.8;
     transition: all 0.3s ease;
     border-radius: 50%;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.7);
     padding: 35px;
-    border: 2px solid #212121;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(152, 213, 198, 0.5);
+    box-shadow: var(--glass-shadow);
     object-fit: contain;
 }
 
@@ -477,7 +544,7 @@ section {
     filter: grayscale(0%);
     opacity: 1;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 28px rgba(3, 86, 104, 0.2);
 }
 
 /* Adjust for mobile screens */
@@ -503,9 +570,10 @@ header .logos img {
     filter: grayscale(100%);
     opacity: 0.8;
     transition: all 0.3s ease;
-    border-radius: 2px;
-    background-color: white;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
     padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 header .logos img:hover {
@@ -528,10 +596,10 @@ header .logos {
     opacity: 0.8;
     transition: all 0.3s ease;
     border-radius: 50%;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.7);
     padding: 35px;
-    border: 2px solid #212121;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(152, 213, 198, 0.5);
+    box-shadow: var(--glass-shadow);
     object-fit: contain;
 }
 
@@ -549,7 +617,7 @@ header .logos {
 .mouse {
     width: 30px;
     height: 50px;
-    border: 2px solid #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     position: relative;
 }
@@ -557,7 +625,7 @@ header .logos {
 .wheel {
     width: 4px;
     height: 8px;
-    background-color: #fff;
+    background-color: var(--secondary);
     position: absolute;
     top: 8px;
     left: 50%;
@@ -569,8 +637,8 @@ header .logos {
 .arrow {
     width: 10px;
     height: 10px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-right: 2px solid var(--secondary);
+    border-bottom: 2px solid var(--secondary);
     transform: rotate(45deg);
     margin-top: 5px;
     animation: arrow-bounce 1.5s infinite;
@@ -610,8 +678,9 @@ h1::after, h2::after {
     bottom: 0;
     width: 80px;
     height: 3px;
-    background-color: #00B0F0;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
     transform: translateX(-50%);
+    border-radius: 2px;
 }
 
 .text-center h2 {
@@ -619,8 +688,12 @@ h1::after, h2::after {
     text-align: center;
 }
 
+.section h2 {
+    color: var(--primary);
+}
+
 .highlight-text {
-    color: #92D050;
+    color: var(--primary);
     font-weight: bold;
 }
 
@@ -669,7 +742,7 @@ h1::after, h2::after {
         height: auto;
         min-height: auto;
         padding: 4rem 1rem;
-        margin: 0;
+        margin-bottom: 2rem;  /* keep spacing between sections */
         overflow: hidden;  /* Prevent content overflow */
     }
 
@@ -779,37 +852,45 @@ h1::after, h2::after {
 }
 
 .footer-contact a {
-    color: #00B0F0;
+    color: var(--secondary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .footer-contact a:hover {
-    color: #92D050;
+    color: #fff;
 }
 
 footer .cta-button {
-    background-color: #92D050;
-    transition: background-color 0.3s ease;
+    background: rgba(152, 213, 198, 0.9);
+    color: var(--primary);
+    border-color: rgba(255, 255, 255, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 footer .cta-button:hover {
-    background-color: #7ab042;
+    background: var(--secondary);
+    color: var(--primary);
 }
 
 .footer-contact i {
-    color: #00B0F0;
+    color: var(--secondary);
     font-size: 1.1em;
     vertical-align: middle;
 }
 
 .footer-contact:hover > i {
-    color: #92D050;
+    color: #fff;
 }
 
 footer .row {
     min-height: 200px;  /* Or whatever height matches your logo */
+}
+
+.logo-glow {
+    filter: drop-shadow(0 0 12px rgba(152, 213, 198, 0.6))
+            drop-shadow(0 0 24px rgba(152, 213, 198, 0.35));
 }
 
 footer .col-lg-6 {
@@ -827,47 +908,64 @@ footer .footer-cta {
 }
 
 .social-link {
-    color: #00B0F0;
+    color: var(--secondary);
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .social-link:hover i {
-    color: #92D050;
+    color: #fff;
 }
 
 /* Navbar icon styling */
 .navbar-nav .nav-link i {
-    color: #92D050;
+    color: var(--primary);
 }
 
-/* Optional: Add hover effect */
 .navbar-nav .nav-link:hover i {
-    color: #7ab042;  /* Slightly darker shade for hover */
+    color: var(--primary);
 }
 
-/* Active link icon */
 .navbar-nav .nav-link.active i {
-    color: #7ab042;
+    color: var(--primary);
 }
 
-/* Statistics Section Styling */
+/* Statistics Section Styling - liquid glass cards */
 #statistics {
-    background-color: #333;
+    background: linear-gradient(180deg, rgba(3, 86, 104, 0.92) 0%, var(--primary) 100%);
     color: white;
+    border-top: 1px solid rgba(152, 213, 198, 0.3);
+}
+
+#statistics h2,
+#statistics h3 {
+    color: #fff;
+}
+
+#statistics h2 .highlight-text {
+    color: #fff;
 }
 
 .stat-box {
+    height: 100%;
     padding: 2rem;
     transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(152, 213, 198, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .stat-box:hover {
     transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(152, 213, 198, 0.45);
 }
 
 .stat-box i {
-    color: #00B0F0;
+    color: var(--secondary);
     font-size: 8rem;
 }
 
@@ -875,11 +973,11 @@ footer .footer-cta {
     font-size: 2.5rem;
     font-weight: bold;
     margin: 1rem 0;
-    color: #f4f4f4;
+    color: #fff;
 }
 
 .stat-description {
-    color: #f4f4f4;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.4;
 }
 
@@ -894,7 +992,7 @@ footer .footer-cta {
 }
 
 .icon-circle i {
-    color: #00B0F0;
+    color: var(--secondary);
 }
 
 .icon-circle {
@@ -902,7 +1000,7 @@ footer .footer-cta {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 2px solid #00B0F0;
+    border: 2px solid rgba(152, 213, 198, 0.6);
     display: flex;
     align-self: center;
     align-items: center;
@@ -910,9 +1008,9 @@ footer .footer-cta {
 }
 
 .stat-link {
-    color: #92D050; 
+    color: var(--secondary);
     text-decoration: none;
-    border-bottom: 1px solid #92D050;
+    border-bottom: 1px solid var(--secondary);
     padding-bottom: 2px;
     margin-top: 10px;
     display: inline-block;
@@ -920,6 +1018,6 @@ footer .footer-cta {
 }
 
 .stat-link:hover {
-    opacity: 0.8;
-    color: #92D050;
+    opacity: 0.9;
+    color: #fff;
 }
